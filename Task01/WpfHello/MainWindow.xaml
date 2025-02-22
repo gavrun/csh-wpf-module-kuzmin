@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfHello"
         mc:Ignorable="d"
         Title="MainWindow" Height="280" Width="400"
-        MinHeight="250" MinWidth="300" Closing="Window_Closing">
+        MinHeight="250" MinWidth="300" Closing="Window_Closing" Closed="Window_Closed">
     <Grid>
         <Menu HorizontalAlignment="Left" VerticalAlignment="Top">
             <MenuItem Header="File">
@@ -18,6 +18,8 @@
         <Label x:Name="retLabel" Content="" HorizontalAlignment="Left" Margin="225,129,0,0" VerticalAlignment="Top"/>
         <Button x:Name="setBut" Content="Set Name" HorizontalAlignment="Left" Margin="81,58,0,0" VerticalAlignment="Top" Click="setBut_Click"/>
         <Button x:Name="retBut" Content="Ret Name" HorizontalAlignment="Left" Margin="81,132,0,0" VerticalAlignment="Top" Click="retBut_Click"/>
+        <Button x:Name="New_Win" Content="New Win" HorizontalAlignment="Left" Margin="81,204,0,0" VerticalAlignment="Top" Click="New_Win_Click"/>
+        <TextBlock x:Name="txtBlock" HorizontalAlignment="Left" Margin="225,191,0,0" Text="" VerticalAlignment="Top" TextWrapping="Wrap" Height="50" Width="75"/>
     </Grid>
 
 </Window>
