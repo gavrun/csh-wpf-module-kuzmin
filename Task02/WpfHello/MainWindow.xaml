@@ -33,7 +33,7 @@
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="150" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             
@@ -47,13 +47,13 @@
 
             <Button x:Name="retBut" Grid.Column="0" Grid.Row="1" Content="Ret Name" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="75" Click="retBut_Click"/>
 
-            <TextBox x:Name="setTex" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="10,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="setTex_TextChanged"/>
+            <TextBox x:Name="setTex" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Margin="10,15,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="setTex_TextChanged"/>
 
-            <Label x:Name="retLabel" Grid.Column="1" Grid.Row="1" Content="" HorizontalAlignment="Left" Height="23" Width="120" Margin="10,15,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="retLabel" Grid.Column="1" Grid.Row="1" Content="" HorizontalAlignment="Stretch" Margin="10,15,10,0" VerticalAlignment="Top"/>
 
             <Button x:Name="New_Win" Grid.Column="0" Grid.Row="2" Content="New Win" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="75" Click="New_Win_Click"/>
 
-            <TextBlock x:Name="txtBlock" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="10,15,0,0" Text="" VerticalAlignment="Top" TextWrapping="Wrap" Width="120"/>
+            <TextBlock x:Name="txtBlock" Grid.Column="1" Grid.Row="2" Margin="10,15,10,15" Text="" TextWrapping="Wrap" />
         </Grid>
     </DockPanel>
 </Window>
