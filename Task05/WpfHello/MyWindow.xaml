@@ -8,8 +8,38 @@
         Title="MyWindow" Height="180" Width="300"
         MinHeight="250" MinWidth="300" Closing="Window_Closing" Closed="Window_Closed"
         Background="{StaticResource gradientStyle}">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="MinHeight" Value="50"/>
+            <Setter Property="MinWidth" Value="50"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <!--<Ellipse Fill="Blue"/>-->
+                            <Rectangle>
+                                <Rectangle.Fill>
+                                    <RadialGradientBrush>
+                                        <GradientStop Color="Blue" Offset="0" />
+                                        <GradientStop Color="BlueViolet" Offset="1" />
+                                    </RadialGradientBrush>
+                                </Rectangle.Fill>
+                                <Rectangle.LayoutTransform>
+                                    <RotateTransform Angle="45" />
+                                </Rectangle.LayoutTransform>
+                            </Rectangle>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <TextBox x:Name="textBox" Text="" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="98,0,0,0"  Width="165" Height="80"/>
-        <Button Content="Send" HorizontalAlignment="Left" Margin="33,0,0,0" VerticalAlignment="Center" Click="Button_Click"/>
+        <Button Content="Send" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,0,0,0"  Click="Button_Click" />
+        <!--Height="70" Width="70"-->
+        <Button Content="Test" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,130,0,0" />
     </Grid>
 </Window>
