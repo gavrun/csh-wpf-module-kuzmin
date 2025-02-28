@@ -31,15 +31,69 @@
                             </Rectangle>
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
+                        <!--<ControlTemplate.Triggers>-->
+                            <!--<Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard Name="Storyboard">
+                                        <Storyboard Duration="0:0:1">
+                                            <DoubleAnimation Storyboard.TargetProperty="FontSize" To="18" />
+                                            <DoubleAnimation Storyboard.TargetProperty="Width" To="60"/>
+                                            <DoubleAnimation Storyboard.TargetProperty="Height" To="60" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <StopStoryboard BeginStoryboardName="Storyboard" />
+                                </Trigger.ExitActions>-->
+                            <!--</Trigger>-->
+                        <!--</ControlTemplate.Triggers>-->
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Style.Triggers>
+                <!--<Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard Name="Storyboard">
+                            <Storyboard Duration="0:0:1">
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="18" />
+                                <DoubleAnimation Storyboard.TargetProperty="Width" To="60"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" To="60" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <StopStoryboard BeginStoryboardName="Storyboard" />
+                    </Trigger.ExitActions>
+                </Trigger>-->
+                <!--<EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard Duration="0:0:1">
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="18" />
+                                <DoubleAnimation Storyboard.TargetProperty="Width" To="60"/>
+                                <DoubleAnimation Storyboard.TargetProperty="Height" To="60" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard Duration="0:0:1">
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" />
+                                <DoubleAnimation Storyboard.TargetProperty="Width" />
+                                <DoubleAnimation Storyboard.TargetProperty="Height" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>-->
+            </Style.Triggers>
         </Style>
     </Window.Resources>
     <Grid>
         <TextBox x:Name="textBox" Text="" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="98,0,0,0"  Width="165" Height="80"/>
-        <Button Content="Send" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,0,0,0"  Click="Button_Click" />
+        <Button Content="Send" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,0,0,0"   Click="Button_Click" />
         <!--Height="70" Width="70"-->
-        <Button Content="Test" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,130,0,0" />
+        <!--<Button Content="Test" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,130,0,0" />-->
     </Grid>
 </Window>
