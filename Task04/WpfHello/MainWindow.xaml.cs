@@ -30,6 +30,14 @@ namespace WpfHello
         {
             InitializeComponent();
 
+            CommandBinding abinding = new CommandBinding();
+            abinding.Command = CustomCommands.Launch;
+
+            abinding.Executed += new ExecutedRoutedEventHandler(Launch_Handler);
+            abinding.CanExecute += new CanExecuteRoutedEventHandler(LaunchEnabled_Handler);
+
+            this.CommandBindings.Add(abinding);
+
             lbl.Content = "Hello world!";
 
             setBut.IsEnabled = false;
@@ -131,24 +139,24 @@ namespace WpfHello
             this.Close();
         }
 
-        private void New_Win_Click(object sender, RoutedEventArgs e)
-        {
-            if (myWin == null)
-            {
-                myWin = new MyWindow();
-            }
+        //private void New_Win_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (myWin == null)
+        //    {
+        //        myWin = new MyWindow();
+        //    }
 
-            myWin.Owner = this;
+        //    myWin.Owner = this;
 
-            //myWin.Top = this.Top;
-            //myWin.Left = this.Left + this.Width;
+        //    //myWin.Top = this.Top;
+        //    //myWin.Left = this.Left + this.Width;
 
-            var location = New_Win.PointToScreen(new Point(0, 0));
-            myWin.Top = location.Y;
-            myWin.Left = location.X + New_Win.Width;
+        //    var location = New_Win.PointToScreen(new Point(0, 0));
+        //    myWin.Top = location.Y;
+        //    myWin.Left = location.X + New_Win.Width;
             
-            myWin.Show();
-        }
+        //    myWin.Show();
+        //}
 
         private void Window_Closed(object sender, EventArgs e)
         {
@@ -178,6 +186,27 @@ namespace WpfHello
                 //throw;
             }
         }
-    }
 
+        private void LaunchEnabled_Handler(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (bool)check.IsChecked;
+        }
+
+        private void Launch_Handler(object sender, ExecutedRoutedEventArgs e) 
+        {
+            if (myWin == null)
+            {
+                myWin = new MyWindow();
+            }
+
+            myWin.Owner = this;
+
+            var location = New_Win.PointToScreen(new Point(0, 0));
+            myWin.Top = location.Y;
+            myWin.Left = location.X + New_Win.Width;
+
+            myWin.Show();
+        }
+
+    }
 }
