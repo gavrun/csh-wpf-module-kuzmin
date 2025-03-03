@@ -128,7 +128,7 @@
             <Button x:Name="New_Win" Grid.Column="0" Grid.Row="2" Content="New Win" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="75" Command="local:CustomCommands.Launch" />
             <!--Click="New_Win_Click"-->
 
-            <TextBlock x:Name="txtBlock" Grid.Column="1" Grid.Row="2" Margin="10,15,10,15" Text="" TextWrapping="Wrap" Background="{StaticResource MyBrush}"/>
+            <TextBlock x:Name="txtBlock" Grid.Column="1" Grid.Row="2" Margin="10,10,10,10" Text="" TextWrapping="Wrap" Background="{StaticResource MyBrush}"/>
         </Grid>
     </DockPanel>
 </Window>

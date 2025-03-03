@@ -57,7 +57,21 @@ namespace WpfHello
 
             if (wnd1 != null)
             {
-                wnd1.txtBlock.Text = textBox.Text;
+                if (listBox1.SelectedItem is Student selectedStudent)
+                {
+                    string boxText = textBox.Text;
+                    string studentNameText = selectedStudent.StudentName;
+
+                    string allText = "Sent " + boxText + " to " + studentNameText;
+                    wnd1.txtBlock.Text = allText;
+
+                    //wnd1.txtBlock.Text = textBox.Text;
+                }
+                else
+                {
+                    //student not selected
+                    return;
+                }
 
                 //PrintLogFile();
                 using (System.IO.StreamWriter writer = new System.IO.StreamWriter("log.txt", true))

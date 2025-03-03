@@ -9,6 +9,9 @@
         MinHeight="250" MinWidth="300" Closing="Window_Closing" Closed="Window_Closed"
         Background="{StaticResource gradientStyle}">
     <Window.Resources>
+        <local:StudentList x:Key="studentCollection"/>
+        <local:BoolToBrushConverter x:Key="boolToBrushConverter" />
+        <!--local:resource-->
         <Style TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True"/>
             <Setter Property="MinHeight" Value="50"/>
@@ -89,8 +92,6 @@
                 </EventTrigger>-->
             </Style.Triggers>
         </Style>
-        <local:StudentList x:Key="studentCollection"/>
-        <local:BoolToBrushConverter x:Key="boolToBrushConverter" />
         <DataTemplate x:Key="listBoxTemplate">
             <StackPanel Orientation="Horizontal">
                 <Rectangle Fill="{Binding Path=IsEnrolled, Converter={StaticResource boolToBrushConverter}}" Height="10" Width="10" Margin="0,0,5,0" />
@@ -105,5 +106,6 @@
         <!--<Button Content="Test" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="33,130,0,0" />-->
         <ListBox Name="listBox1" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Margin="0,0,0,20"   Height="120" Width="220" ItemsSource="{Binding Source={StaticResource studentCollection}}" ItemTemplate="{StaticResource listBoxTemplate}" />
         <!--DisplayMemberPath="FullStudentData"-->
+        
     </Grid>
 </Window>
